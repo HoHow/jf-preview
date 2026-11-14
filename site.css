@@ -814,13 +814,13 @@ textarea.input { min-height: 112px; resize: vertical; }
 .step3-d { margin: 0; font-size: 15px; line-height: 1.75; color: var(--muted); }
 @media (min-width: 768px) { .step3:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -15px; width: 10px; height: 10px; border-top: 2px solid var(--rule); border-right: 2px solid var(--rule); transform: translateY(-50%) rotate(45deg); } }
 
-/* ---------- 服務區域：選單大面板 ---------- */
+/* ---------- 服務區域：選單面板（三區各一句範圍，名單只在服務區域頁） ---------- */
 .mega-names { display: none; }
 .mega-col { display: contents; }
 @media (min-width: 1024px) {
   .mega-panel {
-    width: min(620px, calc(100vw - 48px)); padding: var(--s5); gap: var(--s4) var(--s5);
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(600px, calc(100vw - 48px)); padding: var(--s5); gap: var(--s4) var(--s5);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .mega-col { display: block; }
   .mega-panel a.mega-h {
@@ -829,7 +829,7 @@ textarea.input { min-height: 112px; resize: vertical; }
   }
   .mega-panel a.mega-h::after { content: " ›"; }
   .mega-panel a.mega-h:hover { background: none; text-decoration: underline; text-underline-offset: 4px; }
-  .mega-names { display: block; margin: 0; font-size: 14px; line-height: 1.9; color: var(--muted); white-space: normal; }
+  .mega-names { display: block; margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted); white-space: normal; }
   .mega-panel a.mega-all {
     grid-column: 1 / -1; justify-content: center; min-height: 44px; padding: 0;
     border-radius: var(--radius-sm); background: var(--move-tint); color: var(--move-deep); font-weight: 700;
@@ -858,13 +858,8 @@ textarea.input { min-height: 112px; resize: vertical; }
 .area-card p { margin: 0; color: var(--muted); }
 .area-card.is-hit { border-color: var(--move); box-shadow: 0 0 0 3px var(--move-tint); }
 @media (prefers-reduced-motion: reduce) { .achip, .area-card { transition: none; } }
-.mega-names span { white-space: nowrap; }
 
-/* 服務地區三區：面板改三欄，以整條頁首為定位基準避免窄桌機溢出 */
-@media (min-width: 1024px) {
-  .head-row { position: relative; }
-  .nav-mega { position: static; }
-  .mega-panel { left: 50%; transform: translateX(-50%); width: min(920px, 100%); grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
+/* 服務區域頁：三區並排 */
 @media (min-width: 1100px) { .area-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 768px) { .area-more { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.area-sum { margin: -8px 0 0; font-weight: 700; color: var(--move-deep); }
