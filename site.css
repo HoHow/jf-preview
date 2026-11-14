@@ -799,7 +799,7 @@ textarea.input { min-height: 112px; resize: vertical; }
 .entry2-d { margin: 0; font-size: 16px; line-height: 1.8; color: var(--muted); }
 #entries .chips { margin-top: 24px; }
 .price3 { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 768px) { .price3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+@media (min-width: 1024px) { .price3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
 .price3 li { display: grid; gap: 6px; padding: 24px 24px 26px; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
 .price3-n { font-size: clamp(26px, 3vw, 34px); font-weight: 800; line-height: 1.2; color: var(--move); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 .price3-n small { margin-left: 4px; font-size: 16px; font-weight: 700; color: var(--muted); }
@@ -879,3 +879,20 @@ textarea.input { min-height: 112px; resize: vertical; }
     background: var(--white);
   }
 }
+
+/* 信任列：第一項「不加價」，手機佔滿一列、桌機五欄 */
+.trust-list li.trust-key b { color: var(--crane); }
+@media (max-width: 1023px) { .trust-list li.trust-key { grid-column: 1 / -1; } }
+@media (min-width: 768px) and (max-width: 1023px) { .trust-list li.trust-key + li { border-left: 0; padding-left: 0; } }
+@media (min-width: 1024px) { .trust-list { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* ---------- 本頁目錄：手機橫向滑動、桌機換行 ---------- */
+.toc { background: var(--white); border-bottom: 1px solid var(--rule); }
+.toc-list { list-style: none; margin: 0 auto; display: flex; gap: 8px; padding-block: 14px; overflow-x: auto; scrollbar-width: none; }
+.toc-list::-webkit-scrollbar { display: none; }
+.toc-list a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; background: var(--ground-2); color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+@media (hover: hover) { .toc-list a:hover { background: var(--move-tint); color: var(--move); } }
+@media (min-width: 768px) { .toc-list { flex-wrap: wrap; overflow: visible; } }
+
+/* 區塊標題放關鍵字，原本的標語改成副標 */
+.h2-sub { margin: 10px 0 0; font-size: clamp(17px, 1.9vw, 21px); font-weight: 700; line-height: 1.5; color: var(--muted); }
