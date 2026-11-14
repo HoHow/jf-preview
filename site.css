@@ -786,3 +786,30 @@ textarea.input { min-height: 112px; resize: vertical; }
   .qr-sm img { width: 112px; height: 112px; }
   .qr-sm p { display: none; }
 }
+
+/* ---------- 首頁：優點、價格範例、流程重點 ---------- */
+.benefits { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .benefits { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+.benefit { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 16px; align-items: start; padding: 22px; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.benefit-ic { grid-row: span 2; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--move-tint); color: var(--move); --od-icon-size: 26px; }
+.benefit:nth-child(3) .benefit-ic { background: var(--crane-tint); color: var(--crane); }
+.benefit-t { margin: 0; font-size: 18px; font-weight: 800; line-height: 1.45; color: var(--ink); }
+.benefit-d { margin: 0; font-size: 15px; line-height: 1.75; color: var(--muted); }
+.entry2-d { margin: 0; font-size: 16px; line-height: 1.8; color: var(--muted); }
+#entries .chips { margin-top: 24px; }
+.price3 { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 768px) { .price3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+.price3 li { display: grid; gap: 6px; padding: 24px 24px 26px; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.price3-n { font-size: clamp(26px, 3vw, 34px); font-weight: 800; line-height: 1.2; color: var(--move); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.price3-n small { margin-left: 4px; font-size: 16px; font-weight: 700; color: var(--muted); }
+.price3-t { font-size: 18px; font-weight: 800; color: var(--ink); }
+.price3-s { font-size: 14.5px; color: var(--muted); }
+.steps3 { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); counter-reset: none; }
+@media (min-width: 768px) { .steps3 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
+.step3 { position: relative; display: grid; gap: 8px; align-content: start; padding: 24px; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.step3-n { font-size: 14px; font-weight: 800; letter-spacing: .08em; color: var(--muted); }
+.step3-t { margin: 0; font-size: 20px; font-weight: 800; color: var(--ink); }
+.step3-tag { justify-self: start; margin: 0; padding: 4px 12px; border-radius: 999px; background: var(--crane-tint); color: var(--crane-deep); font-size: 15px; font-weight: 800; }
+.step3-d { margin: 0; font-size: 15px; line-height: 1.75; color: var(--muted); }
+@media (min-width: 768px) { .step3:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -15px; width: 10px; height: 10px; border-top: 2px solid var(--rule); border-right: 2px solid var(--rule); transform: translateY(-50%) rotate(45deg); } }
