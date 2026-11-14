@@ -9,6 +9,7 @@
   if (menuBtn && nav) {
     const setMenu = (open) => {
       nav.classList.toggle('is-open', open);
+      document.documentElement.classList.toggle('nav-open', open);   // 手機滿版選單開啟時鎖住背景捲動
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       menuBtn.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
     };
